@@ -1,0 +1,59 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/vision/code/calibration/CamLidarCal/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_d72eb/fast"
+make[1]: Entering directory '/home/vision/code/calibration/CamLidarCal/build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_d72eb.dir/build.make CMakeFiles/cmTC_d72eb.dir/build
+make[2]: Entering directory '/home/vision/code/calibration/CamLidarCal/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_d72eb.dir/CheckSymbolExists.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_d72eb.dir/CheckSymbolExists.c.o   -c /home/vision/code/calibration/CamLidarCal/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_d72eb
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d72eb.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_d72eb.dir/CheckSymbolExists.c.o  -o cmTC_d72eb -rdynamic 
+CMakeFiles/cmTC_d72eb.dir/CheckSymbolExists.c.o：在函数‘main’中：
+CheckSymbolExists.c:(.text+0x16)：对‘pthread_create’未定义的引用
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_d72eb.dir/build.make:97: recipe for target 'cmTC_d72eb' failed
+make[2]: *** [cmTC_d72eb] Error 1
+make[2]: Leaving directory '/home/vision/code/calibration/CamLidarCal/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_d72eb/fast' failed
+make[1]: *** [cmTC_d72eb/fast] Error 2
+make[1]: Leaving directory '/home/vision/code/calibration/CamLidarCal/build/CMakeFiles/CMakeTmp'
+
+File /home/vision/code/calibration/CamLidarCal/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/vision/code/calibration/CamLidarCal/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_87601/fast"
+make[1]: Entering directory '/home/vision/code/calibration/CamLidarCal/build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_87601.dir/build.make CMakeFiles/cmTC_87601.dir/build
+make[2]: Entering directory '/home/vision/code/calibration/CamLidarCal/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_87601.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_87601.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
+Linking C executable cmTC_87601
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_87601.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_87601.dir/CheckFunctionExists.c.o  -o cmTC_87601 -rdynamic -lpthreads 
+/usr/bin/ld: 找不到 -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_87601.dir/build.make:97: recipe for target 'cmTC_87601' failed
+make[2]: *** [cmTC_87601] Error 1
+make[2]: Leaving directory '/home/vision/code/calibration/CamLidarCal/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_87601/fast' failed
+make[1]: *** [cmTC_87601/fast] Error 2
+make[1]: Leaving directory '/home/vision/code/calibration/CamLidarCal/build/CMakeFiles/CMakeTmp'
+
+
